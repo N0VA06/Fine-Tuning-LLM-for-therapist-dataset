@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Therapist</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'chat-bg': {
+                            light: '#ffffff',
+                            dark: '#343541',
+                        },
+                        'chat-sidebar': {
+                            light: '#f7f7f8',
+                            dark: '#202123',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-theme">
+    <div class="container">
+        <div class="sidebar">
+            <h1>Theralytics</h1>
+            <button id="newChatBtn" class="btn primary-btn">New Chat</button>
+
+            <div class="emotion-controls">
+                <div class="stats-header">
+                    <h2>Emotion Analysis</h2>
+                    <button id="emotionToggleBtn" class="btn secondary-btn">
+                        Start Detection
+                    </button>
+                </div>
+
+                <div class="detection-status">
+                    <div id="statusIndicator" class="status-indicator"></div>
+                    <span id="statusText">Detection Inactive</span>
+                </div>
+
+                <div class="video-container">
+                    <video id="videoFeed"></video>
+                </div>
+
+                <div id="emotionStats" class="emotion-stats">
+                    <div class="stat-box">
+                        <h3>Current Emotion</h3>
+                        <p id="currentEmotion">-</p>
+                    </div>
+                    
+                    <div class="stat-box">
+                        <h3>Confidence</h3>
+                        <p id="confidence">-</p>
+                    </div>
+
+                    <div class="emotion-grid">
+                        <div class="emotion-item">
+                            <div class="emotion-label">Happy</div>
+                            <div id="happy-count" class="emotion-value">0</div>
+                        </div>
+                        <div class="emotion-item">
+                            <div class="emotion-label">Sad</div>
+                            <div id="sad-count" class="emotion-value">0</div>
+                        </div>
+                        <div class="emotion-item">
+                            <div class="emotion-label">Angry</div>
+                            <div id="angry-count" class="emotion-value">0</div>
+                        </div>
+                        <div class="emotion-item">
+                            <div class="emotion-label">Neutral</div>
+                            <div id="neutral-count" class="emotion-value">0</div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <canvas id="emotionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <button id="toggle-theme" class="btn theme-btn">Toggle Theme</button>
+        </div>
+
+        <div class="flex-grow flex flex-col">
+            <div id="chat-window" class="flex-grow overflow-y-auto p-4 space-y-4"></div>
+            <div class="p-4 border-t border-gray-200 dark:border-gray-700">
+                <div class="max-w-3xl mx-auto flex">
+                    <textarea id="user-input" class="flex-grow p-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200" rows="1" placeholder="Type your message here..."></textarea>
+                    <button id="send-btn" class="ml-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">Send</button>
+                </div>
+            </div>
+        </div>
+        </div>
+<script src="script.js"></script>
+</body>
+</html>
