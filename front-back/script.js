@@ -10,9 +10,9 @@ toggleTheme.addEventListener('click', () => {
 });
 
 // API configurations
-const rapidAPIKey = 'c5625cccffmsh12eb2650d0b1d71p19803ejsn550b811fffef';
-const rapidAPIHost = 'open-ai21.p.rapidapi.com';
-const apiUrl = 'https://open-ai21.p.rapidapi.com/claude3';
+const rapidAPIKey = '';
+const rapidAPIHost = '';
+const apiUrl = '';
 
 // Text-to-speech function
 function speakText(text) {
