@@ -3,3 +3,7 @@ Fine-tuning a large language model (LLM) on a therapy dataset can enhance its ab
 
 Dataset : https://huggingface.co/datasets/IINOVAII/therapy-conversations-combined
 Final chatbot : https://github.com/N0VA06/Therapytic-Bot-along-with-emotion-detection
+
+
+
+Completed Project : https://github.com/N0VA06/Therapytic-Bot-along-with-emotion-detection
